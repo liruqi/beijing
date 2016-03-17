@@ -28,4 +28,4 @@ do
     hxnormalize -l 240 -x $FILENAME 2>/dev/null | hxselect -s '\n' -c "table.houseList tbody" >> "audit_house_list/index.html"
 done
 
-echo "</table>" >> "audit_house_list/index.html"
+echo "</table></body></html>" >> "audit_house_list/index.html"
