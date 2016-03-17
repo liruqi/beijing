@@ -1,16 +1,16 @@
 # install html-xml-utils
 # http://stackoverflow.com/questions/7334942
 brew install html-xml-utils
-mkdir audit_house_list
-
-if [ ! -d audit_house_detail ]; then 
 mkdir audit_house_detail
+
+if [ ! -d audit_house_list ]; then 
+mkdir audit_house_list
 
 for i in {1..330}
 do
     FILENAME="audit_house_list/p${i}.html"
 # or curl -o 
-    wget -O $FILENAME "http://210.75.213.188/shh/portal/bjjs/audit_house_list.aspx?pagenumber=${i}&pagesize=20" 
+    wget -k -O $FILENAME "http://210.75.213.188/shh/portal/bjjs/audit_house_list.aspx?pagenumber=${i}&pagesize=20" 
 done
 fi
 
