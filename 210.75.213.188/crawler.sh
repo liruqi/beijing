@@ -14,10 +14,10 @@ do
 done
 fi
 
+> "audit_house_list/index.html"
 for i in {1..330}
 do
     FILENAME="audit_house_list/p${i}.html"
-    > "audit_house_list/index.html"
     hxnormalize -l 240 -x $FILENAME 2>/dev/null | hxselect -s '\n' -c "table.houseList tbody" >> "audit_house_list/index.html"
 done
 
