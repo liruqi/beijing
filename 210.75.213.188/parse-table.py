@@ -3,10 +3,14 @@ import urllib2
 import re
 import subprocess
 import os
+import httplib
 
 htmlfile = open("audit_house_list/index.html")
 html_page = htmlfile.read()
 soup = BeautifulSoup(html_page)
+
+conn = httplib.HTTPConnection("210.75.213.188", 80)
+
 for link in soup.findAll('a'):
     href = link.get('href')
     hid = href.split("=")[-1]
@@ -19,7 +23,9 @@ for link in soup.findAll('a'):
         print "rename: " + hid
 	continue
     localf = open(localname, "w")
-    httpf = urllib2.urlopen(href)
+    print "get: " + href.split("http://210.75.213.188")[1]
+    conn.request('GET', href.split("http://210.75.213.188")[1])
+    httpf = conn.getresponse()
     localf.write(httpf.read())
     httpf.close()
     localf.close()
