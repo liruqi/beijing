@@ -17,6 +17,9 @@ for link in soup.findAll('a'):
     localname = "audit_house_detail/raw/" + hid + ".html"
     if os.path.exists(localname):
         print "exists: " + hid
+	if os.path.exists("audit_house_detail/audit_house_detail.aspx?House_Id=" + hid):
+            print "remove dup: " + hid
+            os.rename("audit_house_detail/audit_house_detail.aspx?House_Id=" + hid, "/tmp/" + hid + ".html")
 	continue
     if os.path.exists("audit_house_detail/audit_house_detail.aspx?House_Id=" + hid):
         os.rename("audit_house_detail/audit_house_detail.aspx?House_Id=" + hid, localname)

@@ -46,8 +46,4 @@ done
 echo "</tbody></table></body></html>" >> "audit_house_list/index.html"
 // replace <img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/> with 详情
 # sudo pip install BeautifulSoup
-python parse-table.py > list.txt
-cat list.txt | sort -n | uniq > audit_house_detail/index.txt
-
-# download files from audit_house_detail/index.txt
- 
+python parse-table.py 
