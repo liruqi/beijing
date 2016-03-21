@@ -21,7 +21,21 @@ echo """<!DOCTYPE HTML>
 <meta charset="UTF-8">
 </head>
 <body>
-<table>""" > "audit_house_list/index.html"
+<table>
+<thead>
+<tr>
+<th width="60">核验编号</th>
+<th width="60">区县</th>
+<th width="100">小区名称</th>
+<th width="80">户型</th>
+<th width="60">面积</th>
+<th width="60">拟售价格</th>
+<th width="120">发布机构</th>
+<th width="70">时间</th>
+<th width="50">详细</th>
+</tr>
+</thead><tbody>
+""" > "audit_house_list/index.html"
 
 for i in {1..366}
 do
@@ -29,11 +43,11 @@ do
     cat $FILENAME >> "audit_house_list/index.html"
 done
 
-echo "</table></body></html>" >> "audit_house_list/index.html"
-
+echo "</tbody></table></body></html>" >> "audit_house_list/index.html"
+// replace <img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/> with 详情
 # sudo pip install BeautifulSoup
 python parse-table.py > list.txt
-cat list.txt | sort -n | uniq > list-uniq.txt
+cat list.txt | sort -n | uniq > audit_house_detail/index.txt
 
-# download file list-uniq.txt
+# download file audit_house_detail/index.txt
  
