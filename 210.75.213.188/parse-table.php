@@ -18,6 +18,5 @@ foreach ($contents as $content)
 
     // or refine the find some more
     $child   = $content->firstChild();
-    $sibling = $child->nextSibling();
     echo $child;
 }

@@ -6,11 +6,12 @@ mkdir audit_house_detail
 if [ ! -d audit_house_list ]; then 
 mkdir audit_house_list
 
-for i in {1..330}
+for i in {1..366}
 do
     FILENAME="audit_house_list/p${i}.html"
 # or curl -o 
-    wget -k -O $FILENAME "http://210.75.213.188/shh/portal/bjjs/audit_house_list.aspx?pagenumber=${i}&pagesize=20" 
+    wget -k -O $FILENAME "http://210.75.213.188/shh/portal/bjjs/audit_house_list.aspx?pagenumber=${i}&pagesize=20"
+    hxnormalize -l 240 -x $FILENAME 2>/dev/null | hxselect -s '\n' -c "table.houseList tbody" > "audit_house_list/i${i}.html"
 done
 fi
 
@@ -22,10 +23,17 @@ echo """<!DOCTYPE HTML>
 <body>
 <table>""" > "audit_house_list/index.html"
 
-for i in {1..330}
+for i in {1..366}
 do
-    FILENAME="audit_house_list/p${i}.html"
-    hxnormalize -l 240 -x $FILENAME 2>/dev/null | hxselect -s '\n' -c "table.houseList tbody" >> "audit_house_list/index.html"
+    FILENAME="audit_house_list/i${i}.html"
+    cat $FILENAME >> "audit_house_list/index.html"
 done
 
 echo "</table></body></html>" >> "audit_house_list/index.html"
+
+# sudo pip install BeautifulSoup
+python parse-table.py > list.txt
+cat list.txt | sort -n | uniq > list-uniq.txt
+
+# download file list-uniq.txt
+ 
