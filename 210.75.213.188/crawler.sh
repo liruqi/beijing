@@ -49,5 +49,5 @@ echo "</tbody></table></body></html>" >> "audit_house_list/index.html"
 python parse-table.py > list.txt
 cat list.txt | sort -n | uniq > audit_house_detail/index.txt
 
-# download file audit_house_detail/index.txt
+# download files from audit_house_detail/index.txt
  
