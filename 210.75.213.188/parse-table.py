@@ -15,11 +15,11 @@ for link in soup.findAll('a'):
         print "exists: " + hid
 	continue
     if os.path.exists("audit_house_detail/audit_house_detail.aspx?House_Id=" + hid):
-        os.rename("audit_house_detail/audit_house_detail.aspx?House_Id=" + hid, localf)
+        os.rename("audit_house_detail/audit_house_detail.aspx?House_Id=" + hid, localname)
         print "rename: " + hid
 	continue
-    httpf = urllib2.urlopen(href)
     localf = open(localname, "w")
+    httpf = urllib2.urlopen(href)
     localf.write(httpf.read())
     httpf.close()
     localf.close()
