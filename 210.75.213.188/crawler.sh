@@ -3,12 +3,13 @@
 brew install html-xml-utils
 mkdir audit_house_detail
 
-if [ ! -d audit_house_list ]; then 
-mkdir audit_house_list
+RAWDIR=audit_house_list/`date +"%Y-%m-%d"`
+if [ ! -d $RAWDIR ]; then 
+mkdir -p $RAWDIR
 
 for i in {1..366}
 do
-    FILENAME="audit_house_list/p${i}.html"
+    FILENAME=$RAWDIR"/p${i}.html"
 # or curl -o 
     wget -k -O $FILENAME "http://210.75.213.188/shh/portal/bjjs/audit_house_list.aspx?pagenumber=${i}&pagesize=20"
     hxnormalize -l 240 -x $FILENAME 2>/dev/null | hxselect -s '\n' -c "table.houseList tbody" > "audit_house_list/i${i}.html"
@@ -44,6 +45,8 @@ do
 done
 
 echo "</tbody></table></body></html>" >> "audit_house_list/index.html"
-// replace <img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/> with 详情
+# replace <img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/> with "detail"
+sed -i '.back' 's#<img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/>#detail#g' audit_house_list/index.html
+
 # sudo pip install BeautifulSoup
 python parse-table.py 
