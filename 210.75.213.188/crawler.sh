@@ -36,17 +36,17 @@ echo """<!DOCTYPE HTML>
 <th width="50">详细</th>
 </tr>
 </thead><tbody>
-""" > "audit_house_list/index.html"
+""" > "${RAWDIR}.html"
 
 for i in {1..366}
 do
     FILENAME="audit_house_list/i${i}.html"
-    cat $FILENAME >> "audit_house_list/index.html"
+    cat $FILENAME >> "${RAWDIR}.html"
 done
 
-echo "</tbody></table></body></html>" >> "audit_house_list/index.html"
+echo "</tbody></table></body></html>" >> "${RAWDIR}.html"
 # replace <img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/> with "detail"
-sed -i '.back' 's#<img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/>#detail#g' audit_house_list/index.html
+sed -i '.back' 's#<img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/>#detail#g' "${RAWDIR}.html"
 
 # sudo pip install BeautifulSoup
 python parse-table.py 
