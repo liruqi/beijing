@@ -1,8 +1,20 @@
 # install html-xml-utils
 # http://stackoverflow.com/questions/7334942
 
-brew install html-xml-utils #For OS X
-apt-get install html-xml-utils #For Debian
+# OS detect: http://stackoverflow.com/questions/394230/
+
+SED_I=" -i"
+case "$OSTYPE" in
+  darwin*)  
+    echo "OSX"
+    brew install html-xml-utils #For OS X
+    SED_I=" -i '.back'"
+    ;; 
+  *) 
+    echo "unknown: $OSTYPE"
+    apt-get install html-xml-utils #For Debian
+    ;;
+esac
 
 mkdir audit_house_detail
 
@@ -49,7 +61,7 @@ done
 
 echo "</tbody></table></body></html>" >> "${RAWDIR}.html"
 # replace <img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/> with "detail"
-sed -i '.back' 's#<img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/>#detail#g' "${RAWDIR}.html"
+sed $SED_I 's#<img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/>#detail#g' "${RAWDIR}.html"
 
-# sudo pip install BeautifulSoup
+sudo pip install BeautifulSoup
 python parse-table.py 
