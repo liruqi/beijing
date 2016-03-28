@@ -5,7 +5,11 @@ import subprocess
 import os
 import httplib
 
-htmlfile = open("audit_house_list/index.html")
+parser = argparse.ArgumentParser(description='Automatically crawl transaction detail page')
+parser.add_argument('--input', dest='input', default="audit_house_list/index.html" help='Input html. If not set "audit_house_list/index.html" will be used')
+args = parser.parse_args(sys.argv[1:])
+
+htmlfile = open(args.input)
 html_page = htmlfile.read()
 soup = BeautifulSoup(html_page)
 

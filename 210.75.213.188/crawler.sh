@@ -64,4 +64,4 @@ echo "</tbody></table></body></html>" >> "${RAWDIR}.html"
 sed $SED_I 's#<img border="0" height="16" src="http://210.75.213.188/shh/portal/bjjs/images/icon_show.gif" width="16"/>#detail#g' "${RAWDIR}.html"
 
 sudo pip install BeautifulSoup
-python parse-table.py 
+python parse-table.py --input "${RAWDIR}.html"
