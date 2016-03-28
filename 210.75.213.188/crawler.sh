@@ -1,6 +1,9 @@
 # install html-xml-utils
 # http://stackoverflow.com/questions/7334942
-brew install html-xml-utils
+
+brew install html-xml-utils #For OS X
+apt-get install html-xml-utils #For Debian
+
 mkdir audit_house_detail
 
 RAWDIR=audit_house_list/`date +"%Y-%m-%d"`
