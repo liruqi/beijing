@@ -65,3 +65,9 @@ sed $SED_I 's#<img border="0" height="16" src="http://210.75.213.188/shh/portal/
 
 sudo pip install BeautifulSoup
 python parse-table.py --input "${RAWDIR}.html"
+
+git add --all audit_house_detail/
+git add "${RAWDIR}.html" 
+git add audit_house_list/i*
+git commit -m 'Update for `date +"%Y-%m-%d"`'
+
