@@ -17,8 +17,8 @@ case "$OSTYPE" in
 esac
 
 mkdir audit_house_detail
-
-RAWDIR=audit_house_list/`date +"%Y-%m-%d"`
+TODAY=`date +"%Y-%m-%d"`
+RAWDIR=audit_house_list/$TODAY
 if [ ! -d $RAWDIR ]; then 
 mkdir -p $RAWDIR
 
@@ -69,5 +69,6 @@ python parse-table.py --input "${RAWDIR}.html"
 git add --all audit_house_detail/
 git add "${RAWDIR}.html" 
 git add audit_house_list/i*
-git commit -m 'Update for `date +"%Y-%m-%d"`'
+git commit -m "Update for $TODAY"
+git push
 
