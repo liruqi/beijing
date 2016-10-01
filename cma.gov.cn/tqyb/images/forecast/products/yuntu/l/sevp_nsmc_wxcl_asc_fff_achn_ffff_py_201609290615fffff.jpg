@@ -1,42 +1,27 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML><HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"> 
-<TITLE>错误：您所请求的网址（URL）无法获取</TITLE>
-<STYLE type="text/css"><!--BODY{background-color:#ffffff;font-family:verdana,sans-serif}PRE{font-family:sans-serif}--></STYLE>
-</HEAD><BODY>
-<H1>错误</H1>
-<H2>您所请求的网址（URL）无法获取</H2>
-<HR noshade size="1px">
-<P>
-当尝试读取以下网址（URL）时：
-<A HREF="http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201609290615fffff.jpg">http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201609290615fffff.jpg</A>
-<P>
-发生了下列的错误：
-<UL>
-<LI>
-<STRONG>
-Read Error
-<BR>
-读取错误
-</STRONG>
-</UL>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>中国气象网</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link href="missing.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        //<!--
+        function isIFrameSelf(){try{if(window.top ==window){return false;}else{return true;}}catch(e){return true;}}
+        function toHome(){ if(!isIFrameSelf()){ window.location.href="http://www.cma.gov.cn/";}}
+        window.setTimeout("toHome()",5000);
+        //-->
+    </script>
+</head>
+<body>
+<div class="login">
+    <div class="container">
+		<div class="blank"></div>
 
-<P>
-系统回应：
-<PRE><I>    (104) Connection reset by peer</I></PRE>
+		对不起，您访问的页面没有找到！<p>
+		对内容有疑问，请咨询中国气象网热线电话：68409797。<p>
+		5秒钟之后，我们将带您进入本站首页......<p>
 
-<P>
-An error condition occurred while reading data from the network.  Please
-retry your request.
-<BR>
-正在通过网络读取数据时发生了错误，请重新尝试。
-</P>
-<P>本缓存服务器管理员：<A HREF="mailto:wssupport@chinanetcenter.com">wssupport@chinanetcenter.com</A>
-<P>Via:yatu16:4 (Cdn Cache Server V2.0)</P>
-
-<BR clear="all">
-<HR noshade size="1px">
-<ADDRESS>
-Generated Fri, 30 Sep 2016 22:53:51 GMT by cache.51cdn.com (Cdn Cache Server V2.0)
-</ADDRESS>
-</BODY></HTML>
+	</div>
+</div>
+</body>
+</html>
