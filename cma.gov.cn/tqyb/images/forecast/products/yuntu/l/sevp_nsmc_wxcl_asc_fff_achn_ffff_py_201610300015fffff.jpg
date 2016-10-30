@@ -9,7 +9,7 @@
 <HR noshade size="1px">
 <P>
 当尝试读取以下网址（URL）时：
-<A HREF="http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201610292130fffff.jpg">http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201610292130fffff.jpg</A>
+<A HREF="http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201610300015fffff.jpg">http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201610300015fffff.jpg</A>
 <P>
 发生了下列的错误：
 <UL>
@@ -32,11 +32,11 @@ retry your request.
 正在通过网络读取数据时发生了错误，请重新尝试。
 </P>
 <P>本缓存服务器管理员：<A HREF="mailto:wssupport@chinanetcenter.com">wssupport@chinanetcenter.com</A>
-<P>Via:yatu17:0 (Cdn Cache Server V2.0)</P>
+<P>Via:yatu17:4 (Cdn Cache Server V2.0)</P>
 
 <BR clear="all">
 <HR noshade size="1px">
 <ADDRESS>
-Generated Sun, 30 Oct 2016 22:51:58 GMT by cache.51cdn.com (Cdn Cache Server V2.0)
+Generated Sun, 30 Oct 2016 22:51:43 GMT by cache.51cdn.com (Cdn Cache Server V2.0)
 </ADDRESS>
 </BODY></HTML>
