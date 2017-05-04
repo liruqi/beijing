@@ -1,3 +1,6 @@
+# Create by Ruqi Li (liruqi@gmail.com)
+# All rights reserved.
+
 # install html-xml-utils
 # http://www.cma.gov.cn/tqyb/images/forecast/products/yuntu/l/sevp_nsmc_wxcl_asc_fff_achn_ffff_py_201606122345fffff.jpg
 # http://image.nmc.cn/product/2017/05/04/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_20170504081500000.JPG?v=1493886889694
