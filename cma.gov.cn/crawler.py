@@ -39,7 +39,7 @@ for i in range(48 * 3):
     FILEURI="/product/%s/%s/%s/WXCL/medium/SEVP_NSMC_WXCL_ASC_E99_ACHN_LNO_PY_%s00000.JPG" % (year, month, dayIM, tm)
     
     if os.path.exists(localname):
-        print 'Exists' + i + ': ' + FILEURI
+        print ('Exists', i, ': ' + FILEURI)
         break
     print "get: " + FILEURI
     conn.request('GET', FILEURI)
